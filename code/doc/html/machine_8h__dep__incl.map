@@ -1,0 +1,7 @@
+<map id="machine.h" name="machine.h">
+<area shape="rect" id="node2" href="$debug_8h.html" title="Fonctions de mise au point interactive. " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node4" href="$prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="96,80,256,107"/>
+<area shape="rect" id="node5" href="$prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="281,80,463,107"/>
+<area shape="rect" id="node6" href="$exec_8h.html" title="Exécution d&#39;une instruction. " alt="" coords="488,80,547,107"/>
+<area shape="rect" id="node3" href="$test__simul_8c.html" title="Test du simulateur. " alt="" coords="265,155,356,181"/>
+</map>

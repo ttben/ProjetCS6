@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de error.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d&#39;instructions d&#39;un processeur simple
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('error_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">error.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="error_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _ERROR_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _ERROR_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82">   20</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82">ERR_NOERROR</a> = 0,    </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1">   21</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1">ERR_UNKNOWN</a>,    </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e">   22</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e">ERR_ILLEGAL</a>,    </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab">   23</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab">ERR_CONDITION</a>,  </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021">   24</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021">ERR_IMMEDIATE</a>,  </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c">   25</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c">ERR_SEGTEXT</a>,    </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915">   26</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915">ERR_SEGDATA</a>,    </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7">   27</a></span>&#160;    <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7">ERR_SEGSTACK</a>,   </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> LAST_ERROR = <a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7">ERR_SEGSTACK</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">   38</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">   40</a></span>&#160;    <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">WARN_HALT</a>,      </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Warning</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> LAST_WARNING = <a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">WARN_HALT</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a> err, <span class="keywordtype">unsigned</span> addr) __attribute__((noreturn));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span><span class="keywordtype">void</span> <a class="code" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error</a>(<a class="code" href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a> err, <span class="keywordtype">unsigned</span> addr);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">warning</a>(<a class="code" href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Warning</a> warn, <span class="keywordtype">unsigned</span> addr);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c">ERR_SEGTEXT</a></div><div class="ttdoc">Violation de taille du segment de texte. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00025">error.h:25</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915">ERR_SEGDATA</a></div><div class="ttdoc">Violation de taille du segment de données. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00026">error.h:26</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab">ERR_CONDITION</a></div><div class="ttdoc">Condition illégale. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00023">error.h:23</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021">ERR_IMMEDIATE</a></div><div class="ttdoc">Valeur immédiate interdite. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00024">error.h:24</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e">ERR_ILLEGAL</a></div><div class="ttdoc">Instruction illégale. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00022">error.h:22</a></div></div>
+<div class="ttc" id="error_8h_html_aec2872edfc57849ea2557178dc2b2673"><div class="ttname"><a href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">warning</a></div><div class="ttdeci">void warning(Warning warn, unsigned addr)</div><div class="ttdoc">Affichage d&#39;un avertissement. </div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1">ERR_UNKNOWN</a></div><div class="ttdoc">Instruction inconnue. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00021">error.h:21</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7">ERR_SEGSTACK</a></div><div class="ttdoc">Violation de taille du segment de pile. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00027">error.h:27</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a></div><div class="ttdeci">Error</div><div class="ttdoc">Erreur d&#39;exécution. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00018">error.h:18</a></div></div>
+<div class="ttc" id="error_8h_html_af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77"><div class="ttname"><a href="error_8h.html#af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77">WARN_HALT</a></div><div class="ttdoc">Fin normale du programme (sur HALT) </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00040">error.h:40</a></div></div>
+<div class="ttc" id="error_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82"><div class="ttname"><a href="error_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82">ERR_NOERROR</a></div><div class="ttdoc">Pas d&#39;erreur. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00020">error.h:20</a></div></div>
+<div class="ttc" id="error_8h_html_af6ea07812363481c623a23ea26fbf8ed"><div class="ttname"><a href="error_8h.html#af6ea07812363481c623a23ea26fbf8ed">Warning</a></div><div class="ttdeci">Warning</div><div class="ttdoc">Codes d&#39;avertissement. </div><div class="ttdef"><b>Definition:</b> <a href="error_8h_source.html#l00038">error.h:38</a></div></div>
+<div class="ttc" id="error_8h_html_a531bb138b38aef758b45a442aa53938a"><div class="ttname"><a href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error</a></div><div class="ttdeci">void error(Error err, unsigned addr)</div><div class="ttdoc">Affichage d&#39;une erreur et fin du simulateur. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="error_8h.html">error.h</a></li>
+    <li class="footer">Généré le Mercredi 4 Juin 2014 08:58:05 pour Simulateur du jeu d&#39;instructions d&#39;un processeur simple par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de exec.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d&#39;instructions d&#39;un processeur simple
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('exec_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">exec.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="exec_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _EXEC_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _EXEC_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html">machine.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="exec_8h.html#a41471ced34d27777447c2609173af7de">decode_execute</a>(<a class="code" href="structMachine.html">Machine</a> *pmach, <a class="code" href="unionInstruction.html">Instruction</a> instr);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code" href="structMachine.html">Machine</a> *pmach, <a class="code" href="unionInstruction.html">Instruction</a> instr, <span class="keywordtype">unsigned</span> addr);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="unionInstruction_html"><div class="ttname"><a href="unionInstruction.html">Instruction</a></div><div class="ttdoc">Structure d&#39;une instruction. </div><div class="ttdef"><b>Definition:</b> <a href="instruction_8h_source.html#l00052">instruction.h:52</a></div></div>
+<div class="ttc" id="exec_8h_html_a41471ced34d27777447c2609173af7de"><div class="ttname"><a href="exec_8h.html#a41471ced34d27777447c2609173af7de">decode_execute</a></div><div class="ttdeci">bool decode_execute(Machine *pmach, Instruction instr)</div><div class="ttdoc">Décodage et exécution d&#39;une instruction. </div></div>
+<div class="ttc" id="structMachine_html"><div class="ttname"><a href="structMachine.html">Machine</a></div><div class="ttdoc">Structure générale de la machine. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00070">machine.h:70</a></div></div>
+<div class="ttc" id="machine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">Description de la structure du processeur et de sa mémoire. </div></div>
+<div class="ttc" id="exec_8h_html_aae353f8fd7ccdbebd6c37fc0f75d12d3"><div class="ttname"><a href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">trace</a></div><div class="ttdeci">void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr)</div><div class="ttdoc">Trace de l&#39;exécution. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="exec_8h.html">exec.h</a></li>
+    <li class="footer">Généré le Mercredi 4 Juin 2014 08:58:05 pour Simulateur du jeu d&#39;instructions d&#39;un processeur simple par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

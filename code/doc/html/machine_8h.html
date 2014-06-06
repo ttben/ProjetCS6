@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple: Référence du fichier machine.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d&#39;instructions d&#39;un processeur simple
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('machine_8h.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier machine.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Description de la structure du processeur et de sa mémoire.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="instruction_8h_source.html">instruction.h</a>&quot;</code><br/>
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Graphe des dépendances par inclusion de machine.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h__incl.png" border="0" usemap="#machine_8h" alt=""/></div>
+<map name="machine_8h" id="machine_8h">
+<area shape="rect" id="node3" href="instruction_8h.html" title="Description du jeu d&#39;instruction. " alt="" coords="79,80,169,107"/></map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h__dep__incl.png" border="0" usemap="#machine_8hdep" alt=""/></div>
+<map name="machine_8hdep" id="machine_8hdep">
+<area shape="rect" id="node2" href="debug_8h.html" title="Fonctions de mise au point interactive. " alt="" coords="5,80,72,107"/><area shape="rect" id="node4" href="prog__simple_8c.html" title="Examples/prog_simple.c" alt="" coords="96,80,256,107"/><area shape="rect" id="node5" href="prog__subroutine_8c.html" title="Examples/prog_subroutine.c" alt="" coords="281,80,463,107"/><area shape="rect" id="node6" href="exec_8h.html" title="Exécution d&#39;une instruction. " alt="" coords="488,80,547,107"/><area shape="rect" id="node3" href="test__simul_8c.html" title="Test du simulateur. " alt="" coords="265,155,356,181"/></map>
+</div>
+</div>
+<p><a href="machine_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMachine.html">Machine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure générale de la machine.  <a href="structMachine.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7fc2a43e54def648bc97e9f533a1e42f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f">NREGISTERS</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:a7fc2a43e54def648bc97e9f533a1e42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de resitres généraux.  <a href="#a7fc2a43e54def648bc97e9f533a1e42f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a7fc2a43e54def648bc97e9f533a1e42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed5ab4a0b09c5593a7ac3d93739b0ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#aeed5ab4a0b09c5593a7ac3d93739b0ca">_sp</a>&#160;&#160;&#160;_registers[<a class="el" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f">NREGISTERS</a> - 1]</td></tr>
+<tr class="memdesc:aeed5ab4a0b09c5593a7ac3d93739b0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de _sp comme synonyme du registre R15.  <a href="#aeed5ab4a0b09c5593a7ac3d93739b0ca">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aeed5ab4a0b09c5593a7ac3d93739b0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a4bc92b6f72076bb5dd651a143f58a2c3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a> { <a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc">CC_U</a> = 0, 
+<a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f">CC_Z</a>, 
+<a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c">CC_P</a>, 
+<a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b">CC_N</a>
+ }</td></tr>
+<tr class="memdesc:a4bc92b6f72076bb5dd651a143f58a2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code condition.  <a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a4bc92b6f72076bb5dd651a143f58a2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a9ac26e6f927cf2956823b4f9588d44df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">load_program</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, unsigned <a class="el" href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a>, <a class="el" href="unionInstruction.html">Instruction</a> <a class="el" href="test__simul_8c.html#a53ae7c86b11d9a664628491ba41ca09d">text</a>[<a class="el" href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a>], unsigned <a class="el" href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a>, <a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a> <a class="el" href="test__simul_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a>[<a class="el" href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a>], unsigned <a class="el" href="test__simul_8c.html#ad74734ae58f284f6cc955dfecf50f0d0">dataend</a>)</td></tr>
+<tr class="memdesc:a9ac26e6f927cf2956823b4f9588d44df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'un programme.  <a href="#a9ac26e6f927cf2956823b4f9588d44df">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9ac26e6f927cf2956823b4f9588d44df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac59b88844961c2479108151e24dd555a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">read_program</a> (<a class="el" href="structMachine.html">Machine</a> *mach, const char *programfile)</td></tr>
+<tr class="memdesc:ac59b88844961c2479108151e24dd555a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture d'un programme depuis un fichier binaire.  <a href="#ac59b88844961c2479108151e24dd555a">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ac59b88844961c2479108151e24dd555a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69650bbdba0125402a22c4451755412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">dump_memory</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
+<tr class="memdesc:aa69650bbdba0125402a22c4451755412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage du programme et des données.  <a href="#aa69650bbdba0125402a22c4451755412">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa69650bbdba0125402a22c4451755412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3ce4987ef379073d9d3f31debf89e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">print_program</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
+<tr class="memdesc:aba3ce4987ef379073d9d3f31debf89e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage des instructions du programme.  <a href="#aba3ce4987ef379073d9d3f31debf89e7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aba3ce4987ef379073d9d3f31debf89e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549be6eaf631d871e9357513c748640d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">print_data</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
+<tr class="memdesc:a549be6eaf631d871e9357513c748640d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage des données du programme.  <a href="#a549be6eaf631d871e9357513c748640d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a549be6eaf631d871e9357513c748640d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cfff30238b966cfc3c0c416d7076e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">print_cpu</a> (<a class="el" href="structMachine.html">Machine</a> *pmach)</td></tr>
+<tr class="memdesc:a87cfff30238b966cfc3c0c416d7076e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage des registres du CPU.  <a href="#a87cfff30238b966cfc3c0c416d7076e9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a87cfff30238b966cfc3c0c416d7076e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bfa0ce7434b963eea888d7b847ac3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">simul</a> (<a class="el" href="structMachine.html">Machine</a> *pmach, bool debug)</td></tr>
+<tr class="memdesc:ad0bfa0ce7434b963eea888d7b847ac3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulation.  <a href="#ad0bfa0ce7434b963eea888d7b847ac3b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad0bfa0ce7434b963eea888d7b847ac3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Description de la structure du processeur et de sa mémoire. </p>
+
+<p>Définition dans le fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="aeed5ab4a0b09c5593a7ac3d93739b0ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _sp&#160;&#160;&#160;_registers[<a class="el" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f">NREGISTERS</a> - 1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition de _sp comme synonyme du registre R15. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00087">87</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7fc2a43e54def648bc97e9f533a1e42f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NREGISTERS&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nombre de resitres généraux. </p>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00014">14</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a class="anchor" id="a4bc92b6f72076bb5dd651a143f58a2c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Code condition. </p>
+<p>Le code condition donne le signe du résultat de la dernière instruction arithmétique (addition, soustraction) exécutée par le processeur.</p>
+<dl class="section note"><dt>Note</dt><dd>Dans un processeur réel, le code condition fait partie du mot d'état du processeur. Il contient d'autres indications que le simple signe du résultat : par exemple le fait qu'une retenue ait été générée ou bien qu'un dépassement de capacité (<em>overflow</em>) se soit produit. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc"></a>CC_U</em>&#160;</td><td class="fielddoc">
+<p>Signe du résultat inconnu. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f"></a>CC_Z</em>&#160;</td><td class="fielddoc">
+<p>Résultat nul. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c"></a>CC_P</em>&#160;</td><td class="fielddoc">
+<p>Résultat positif. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b"></a>CC_N</em>&#160;</td><td class="fielddoc">
+<p>Résultat négatif. </p>
+</td></tr>
+</table>
+
+<p>Définition à la ligne <a class="el" href="machine_8h_source.html#l00026">26</a> du fichier <a class="el" href="machine_8h_source.html">machine.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc">CC_U</a> = 0,   </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f">CC_Z</a>,   </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c">CC_P</a>,   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b">CC_N</a>,   </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;} <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a>;</div>
+<div class="ttc" id="machine_8h_html_a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c"><div class="ttname"><a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c">CC_P</a></div><div class="ttdoc">Résultat positif. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00030">machine.h:30</a></div></div>
+<div class="ttc" id="machine_8h_html_a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f"><div class="ttname"><a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f">CC_Z</a></div><div class="ttdoc">Résultat nul. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00029">machine.h:29</a></div></div>
+<div class="ttc" id="machine_8h_html_a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b"><div class="ttname"><a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b">CC_N</a></div><div class="ttdoc">Résultat négatif. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00031">machine.h:31</a></div></div>
+<div class="ttc" id="machine_8h_html_a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc"><div class="ttname"><a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc">CC_U</a></div><div class="ttdoc">Signe du résultat inconnu. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00028">machine.h:28</a></div></div>
+<div class="ttc" id="machine_8h_html_a4bc92b6f72076bb5dd651a143f58a2c3"><div class="ttname"><a href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3">Condition_Code</a></div><div class="ttdeci">Condition_Code</div><div class="ttdoc">Code condition. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00026">machine.h:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="aa69650bbdba0125402a22c4451755412"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dump_memory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage du programme et des données. </p>
+<p>On affiche les instruction et les données en format hexadécimal, sous une forme prête à être coupée-collée dans le simulateur.</p>
+<p>Pendant qu'on y est, on produit aussi un dump binaire dans le fichier dump.prog. Le format de ce fichier est compatible avec l'option -b de test_simul.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_aa69650bbdba0125402a22c4451755412_icgraph.png" border="0" usemap="#machine_8h_aa69650bbdba0125402a22c4451755412_icgraph" alt=""/></div>
+<map name="machine_8h_aa69650bbdba0125402a22c4451755412_icgraph" id="machine_8h_aa69650bbdba0125402a22c4451755412_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="160,5,211,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ac26e6f927cf2956823b4f9588d44df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void load_program </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>textsize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionInstruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>text</em>[textsize], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>datasize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a>&#160;</td>
+          <td class="paramname"><em>data</em>[datasize], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>dataend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chargement d'un programme. </p>
+<p>La machine est réinitialisée et ses segments de texte et de données sont remplacés par ceux fournis en paramètre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+    <tr><td class="paramname">textsize</td><td>taille utile du segment de texte </td></tr>
+    <tr><td class="paramname">text</td><td>le contenu du segment de texte </td></tr>
+    <tr><td class="paramname">datasize</td><td>taille utile du segment de données </td></tr>
+    <tr><td class="paramname">data</td><td>le contenu initial du segment de texte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_a9ac26e6f927cf2956823b4f9588d44df_icgraph.png" border="0" usemap="#machine_8h_a9ac26e6f927cf2956823b4f9588d44df_icgraph" alt=""/></div>
+<map name="machine_8h_a9ac26e6f927cf2956823b4f9588d44df_icgraph" id="machine_8h_a9ac26e6f927cf2956823b4f9588d44df_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="155,5,205,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87cfff30238b966cfc3c0c416d7076e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_cpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage des registres du CPU. </p>
+<p>Les registres généraux sont affichées en format hexadécimal et décimal.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_a87cfff30238b966cfc3c0c416d7076e9_icgraph.png" border="0" usemap="#machine_8h_a87cfff30238b966cfc3c0c416d7076e9_icgraph" alt=""/></div>
+<map name="machine_8h_a87cfff30238b966cfc3c0c416d7076e9_icgraph" id="machine_8h_a87cfff30238b966cfc3c0c416d7076e9_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="128,5,179,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a549be6eaf631d871e9357513c748640d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage des données du programme. </p>
+<p>Les valeurs sont affichées en format hexadécimal et décimal.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_a549be6eaf631d871e9357513c748640d_icgraph.png" border="0" usemap="#machine_8h_a549be6eaf631d871e9357513c748640d_icgraph" alt=""/></div>
+<map name="machine_8h_a549be6eaf631d871e9357513c748640d_icgraph" id="machine_8h_a549be6eaf631d871e9357513c748640d_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="133,5,184,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aba3ce4987ef379073d9d3f31debf89e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_program </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affichage des instructions du programme. </p>
+<p>Les instructions sont affichées sous forme symbolique, précédées de leur adresse. .* </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_aba3ce4987ef379073d9d3f31debf89e7_icgraph.png" border="0" usemap="#machine_8h_aba3ce4987ef379073d9d3f31debf89e7_icgraph" alt=""/></div>
+<map name="machine_8h_aba3ce4987ef379073d9d3f31debf89e7_icgraph" id="machine_8h_aba3ce4987ef379073d9d3f31debf89e7_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="155,5,205,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac59b88844961c2479108151e24dd555a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_program </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>mach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>programfile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lecture d'un programme depuis un fichier binaire. </p>
+<p>Le fichier binaire a le format suivant :</p>
+<ul>
+<li>3 entiers non signés, la taille du segment de texte (<code>textsize</code>), celle du segment de données (<code>datasize</code>) et la première adresse libre de données (<code>dataend</code>) ;</li>
+<li>une suite de <code>textsize</code> entiers non signés représentant le contenu du segment de texte (les instructions) ;</li>
+<li>une suite de <code>datasize</code> entiers non signés représentant le contenu initial du segment de données.</li>
+</ul>
+<p>Tous les entiers font 32 bits et les adresses de chaque segment commencent à 0. La fonction initialise complétement la machine.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine à simuler </td></tr>
+    <tr><td class="paramname">programfile</td><td>le nom du fichier binaire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_ac59b88844961c2479108151e24dd555a_icgraph.png" border="0" usemap="#machine_8h_ac59b88844961c2479108151e24dd555a_icgraph" alt=""/></div>
+<map name="machine_8h_ac59b88844961c2479108151e24dd555a_icgraph" id="machine_8h_ac59b88844961c2479108151e24dd555a_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="155,5,205,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0bfa0ce7434b963eea888d7b847ac3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMachine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>debug</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simulation. </p>
+<p>La boucle de simualtion est très simple : recherche de l'instruction suivante (pointée par le compteur ordinal <code>_pc</code>) puis décodage et exécution de l'instruction.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine en cours d'exécution </td></tr>
+    <tr><td class="paramname">debug</td><td>mode de mise au point (pas à apas) ? </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Référencé par <a class="el" href="test__simul_8c_source.html#l00058">main()</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Voici le graphe des appelants de cette fonction :</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph.png" border="0" usemap="#machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph" alt=""/></div>
+<map name="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph" id="machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b_icgraph">
+<area shape="rect" id="node2" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Programme de test. " alt="" coords="107,5,157,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="machine_8h.html">machine.h</a></li>
+    <li class="footer">Généré le Mercredi 4 Juin 2014 08:58:05 pour Simulateur du jeu d&#39;instructions d&#39;un processeur simple par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

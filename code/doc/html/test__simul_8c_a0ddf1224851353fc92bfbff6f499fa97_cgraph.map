@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$machine_8h.html#aa69650bbdba0125402a22c4451755412" title="Affichage du programme et des données. " alt="" coords="104,5,211,32"/>
+<area shape="rect" id="node3" href="$machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df" title="Chargement d&#39;un programme. " alt="" coords="107,56,207,83"/>
+<area shape="rect" id="node4" href="$machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9" title="Affichage des registres du CPU. " alt="" coords="120,107,195,133"/>
+<area shape="rect" id="node5" href="$machine_8h.html#a549be6eaf631d871e9357513c748640d" title="Affichage des données du programme. " alt="" coords="118,157,197,184"/>
+<area shape="rect" id="node6" href="$machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7" title="Affichage des instructions du programme. " alt="" coords="107,208,208,235"/>
+<area shape="rect" id="node7" href="$machine_8h.html#ac59b88844961c2479108151e24dd555a" title="Lecture d&#39;un programme depuis un fichier binaire. " alt="" coords="107,259,208,285"/>
+<area shape="rect" id="node8" href="$machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b" title="Simulation. " alt="" coords="131,309,183,336"/>
+</map>

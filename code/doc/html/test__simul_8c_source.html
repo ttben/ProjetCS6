@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Simulateur du jeu d&#39;instructions d&#39;un processeur simple:  Fichier source de test_simul.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulateur du jeu d&#39;instructions d&#39;un processeur simple
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('test__simul_8c_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">test_simul.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="test__simul_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html">machine.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8h.html">debug.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <a class="code" href="unionInstruction.html">Instruction</a> <a class="code" href="test__simul_8c.html#a53ae7c86b11d9a664628491ba41ca09d">text</a>[];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a> <a class="code" href="test__simul_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a>[];</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="test__simul_8c.html#ad74734ae58f284f6cc955dfecf50f0d0">dataend</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code" href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a>;  </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> usage()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    printf(<span class="stringliteral">&quot;Usage: test_simul [options] [binfile]\n&quot;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    printf(<span class="stringliteral">&quot;where options are:\n&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;           <span class="stringliteral">&quot;\t-d\tDebug mode (interactive execution)\n&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;           <span class="stringliteral">&quot;\t-b\tA binary file is provided\n&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;           <span class="stringliteral">&quot;\t-l\tDo not execute; just display the listing\n&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;           <span class="stringliteral">&quot;\t-h\tprint this help message\n&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;           <span class="stringliteral">&quot;If -b is given, the next argument must be a file name containing\n&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;           <span class="stringliteral">&quot;a valid program in binary format. Otherwise an internally defined\n&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;           <span class="stringliteral">&quot;example program is used; the program is also dumped in binary into\n&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;           <span class="stringliteral">&quot;the file dump.bin\n&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">   58</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> debug = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> binfile = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> no_exec = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">char</span> *programfile = NULL;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1) </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iarg = 1; iarg &lt; argc; ++iarg)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (argv[iarg][0] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">switch</span> (argv[iarg][1])</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    debug = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>: </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    binfile = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                 <span class="keywordflow">case</span> <span class="charliteral">&#39;l&#39;</span>: </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    no_exec = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                  <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    usage();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    exit(EXIT_SUCCESS);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;Unknown option: %s\n&quot;</span>, argv[iarg]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    usage();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (binfile)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                programfile = argv[iarg];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;Trailing options ignored...\n&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="structMachine.html">Machine</a> mach;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (!binfile) </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">load_program</a>(&amp;mach, <a class="code" href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a>, text, <a class="code" href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a>, <a class="code" href="test__simul_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a>, <a class="code" href="test__simul_8c.html#ad74734ae58f284f6cc955dfecf50f0d0">dataend</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">read_program</a>(&amp;mach, programfile);   </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    printf(<span class="stringliteral">&quot;\n*** Sauvegarde des programmes et données initiales en format binaire ***\n\n&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">dump_memory</a>(&amp;mach);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    printf(<span class="stringliteral">&quot;\n*** Machine state before execution ***\n&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">print_program</a>(&amp;mach);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">print_data</a>(&amp;mach);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">print_cpu</a>(&amp;mach);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (no_exec) </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    printf(<span class="stringliteral">&quot;\n*** Execution trace ***\n\n&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">simul</a>(&amp;mach, debug);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    printf(<span class="stringliteral">&quot;\n*** Machine state after execution ***\n&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">print_cpu</a>(&amp;mach);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">print_data</a>(&amp;mach);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> 0; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="ttc" id="debug_8h_html"><div class="ttname"><a href="debug_8h.html">debug.h</a></div><div class="ttdoc">Fonctions de mise au point interactive. </div></div>
+<div class="ttc" id="machine_8h_html_a87cfff30238b966cfc3c0c416d7076e9"><div class="ttname"><a href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">print_cpu</a></div><div class="ttdeci">void print_cpu(Machine *pmach)</div><div class="ttdoc">Affichage des registres du CPU. </div></div>
+<div class="ttc" id="test__simul_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">Programme de test. </div><div class="ttdef"><b>Definition:</b> <a href="test__simul_8c_source.html#l00058">test_simul.c:58</a></div></div>
+<div class="ttc" id="unionInstruction_html"><div class="ttname"><a href="unionInstruction.html">Instruction</a></div><div class="ttdoc">Structure d&#39;une instruction. </div><div class="ttdef"><b>Definition:</b> <a href="instruction_8h_source.html#l00052">instruction.h:52</a></div></div>
+<div class="ttc" id="machine_8h_html_aba3ce4987ef379073d9d3f31debf89e7"><div class="ttname"><a href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">print_program</a></div><div class="ttdeci">void print_program(Machine *pmach)</div><div class="ttdoc">Affichage des instructions du programme. </div></div>
+<div class="ttc" id="test__simul_8c_html_a0a1a7765b8d407ad9c19649d5a9dd699"><div class="ttname"><a href="test__simul_8c.html#a0a1a7765b8d407ad9c19649d5a9dd699">data</a></div><div class="ttdeci">Word data[]</div><div class="ttdoc">Premier exemple de segment de données initial. </div><div class="ttdef"><b>Definition:</b> <a href="prog__simple-bin_8c_source.html#l00010">prog_simple-bin.c:10</a></div></div>
+<div class="ttc" id="test__simul_8c_html_aaf62fcfcec5bdcaf147f70c32398ab32"><div class="ttname"><a href="test__simul_8c.html#aaf62fcfcec5bdcaf147f70c32398ab32">datasize</a></div><div class="ttdeci">const unsigned datasize</div><div class="ttdoc">Taille utile du segment de données. </div><div class="ttdef"><b>Definition:</b> <a href="prog__simple-bin_8c_source.html#l00015">prog_simple-bin.c:15</a></div></div>
+<div class="ttc" id="machine_8h_html_ac59b88844961c2479108151e24dd555a"><div class="ttname"><a href="machine_8h.html#ac59b88844961c2479108151e24dd555a">read_program</a></div><div class="ttdeci">void read_program(Machine *mach, const char *programfile)</div><div class="ttdoc">Lecture d&#39;un programme depuis un fichier binaire. </div></div>
+<div class="ttc" id="machine_8h_html_ad0bfa0ce7434b963eea888d7b847ac3b"><div class="ttname"><a href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">simul</a></div><div class="ttdeci">void simul(Machine *pmach, bool debug)</div><div class="ttdoc">Simulation. </div></div>
+<div class="ttc" id="test__simul_8c_html_ab06365569505a01a31c5b0da6227d724"><div class="ttname"><a href="test__simul_8c.html#ab06365569505a01a31c5b0da6227d724">textsize</a></div><div class="ttdeci">const unsigned textsize</div><div class="ttdoc">Taille utile du programme. </div><div class="ttdef"><b>Definition:</b> <a href="prog__simple-bin_8c_source.html#l00008">prog_simple-bin.c:8</a></div></div>
+<div class="ttc" id="machine_8h_html_a9ac26e6f927cf2956823b4f9588d44df"><div class="ttname"><a href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">load_program</a></div><div class="ttdeci">void load_program(Machine *pmach, unsigned textsize, Instruction text[textsize], unsigned datasize, Word data[datasize], unsigned dataend)</div><div class="ttdoc">Chargement d&#39;un programme. </div></div>
+<div class="ttc" id="test__simul_8c_html_ad74734ae58f284f6cc955dfecf50f0d0"><div class="ttname"><a href="test__simul_8c.html#ad74734ae58f284f6cc955dfecf50f0d0">dataend</a></div><div class="ttdeci">const unsigned dataend</div><div class="ttdoc">Fin de la zone de données utile. </div><div class="ttdef"><b>Definition:</b> <a href="prog__simple_8c_source.html#l00038">prog_simple.c:38</a></div></div>
+<div class="ttc" id="machine_8h_html_a549be6eaf631d871e9357513c748640d"><div class="ttname"><a href="machine_8h.html#a549be6eaf631d871e9357513c748640d">print_data</a></div><div class="ttdeci">void print_data(Machine *pmach)</div><div class="ttdoc">Affichage des données du programme. </div></div>
+<div class="ttc" id="instruction_8h_html_a0b5b15ce5f3a75b5dd0de6643cd3d958"><div class="ttname"><a href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958">Word</a></div><div class="ttdeci">uint32_t Word</div><div class="ttdoc">Type d&#39;un mot de donnée. </div><div class="ttdef"><b>Definition:</b> <a href="instruction_8h_source.html#l00124">instruction.h:124</a></div></div>
+<div class="ttc" id="structMachine_html"><div class="ttname"><a href="structMachine.html">Machine</a></div><div class="ttdoc">Structure générale de la machine. </div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00070">machine.h:70</a></div></div>
+<div class="ttc" id="machine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">Description de la structure du processeur et de sa mémoire. </div></div>
+<div class="ttc" id="test__simul_8c_html_a53ae7c86b11d9a664628491ba41ca09d"><div class="ttname"><a href="test__simul_8c.html#a53ae7c86b11d9a664628491ba41ca09d">text</a></div><div class="ttdeci">Instruction text[]</div><div class="ttdoc">Segment de texte. </div><div class="ttdef"><b>Definition:</b> <a href="prog__simple-bin_8c_source.html#l00001">prog_simple-bin.c:1</a></div></div>
+<div class="ttc" id="machine_8h_html_aa69650bbdba0125402a22c4451755412"><div class="ttname"><a href="machine_8h.html#aa69650bbdba0125402a22c4451755412">dump_memory</a></div><div class="ttdeci">void dump_memory(Machine *pmach)</div><div class="ttdoc">Affichage du programme et des données. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="test__simul_8c.html">test_simul.c</a></li>
+    <li class="footer">Généré le Mercredi 4 Juin 2014 08:58:05 pour Simulateur du jeu d&#39;instructions d&#39;un processeur simple par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
