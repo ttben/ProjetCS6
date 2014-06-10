@@ -16,6 +16,7 @@ void load_program(Machine *pmach,
 	
 	pmach->_cc = CC_U;
 	pmach->_sp = datasize-1;
+	pmach->_pc = 0;
 	
 	printf("textsize %d, datasize %d, dataend %d, cc %d, sp %d\n", 
 				pmach->_textsize, pmach->_datasize, pmach->_dataend,
@@ -110,5 +111,21 @@ void print_cpu(Machine *pmach)
 
 void simul(Machine *pmach, bool debug)
 {
-
+	Instruction *instruction_courante;
+	int i = 0;
+	
+	while( (instruction_courante = pmach->_text[i])->_cop != HALT)
+	{
+		if(decode_execute(pmach, instruction_courante) == FALSE)
+		{
+			//TODO ERROR
+		}
+	
+		if(debug)
+		{
+			//FIXME CONSTANTES
+			trace("", pmach, instruction_courante, 0);
+		}	
+		i++;
+	}
 }
