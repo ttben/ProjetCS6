@@ -41,8 +41,8 @@ bool isImmediate(Instruction instr) {
 }
 
 //! Renvoie vrai si l'instruction est de type absolue
-//! Equivaut à not(X) ou I
 /*!
+ * Equivaut à not(X) ou I
  * \param instr L'instruction à évaluer
  */
 bool isAbsolute(Instruction instr) {
@@ -64,8 +64,9 @@ const Code_Op getInstrCop(Instruction instr) {
     return COP;
 }
 
-//! Renvoie vrai si le code opération ne nécessite
+//! Renvoie vrai si RC contient une valeur de registre
 /*!
+ * est fonction du code opération (> SUB & < LOAD)
  * \param instr L'instruction à vérifier
  */
 bool isRCregister(Instruction instr) {
@@ -77,8 +78,7 @@ bool isRCregister(Instruction instr) {
     return true;
 }
 
-//! Renvoie vrai si le code opération ne nécessite
-//! pas d'opérandes
+//! Renvoie vrai si le code opération ne nécessite pas d'opérandes
 /*!
  * \param instr L'instruction à vérifier
  */
@@ -92,9 +92,9 @@ bool noOpNeeded(Instruction instr) {
 }
 
 //! Renvoie vrai si le code opération passé en paramètre
-//! fait partie des codes qui nécessitent une condition
-//! soit: BRANCH et CALL
 /*!
+ * fait partie des codes qui nécessitent une condition
+ * soit: BRANCH et CALL
  * \param cop Code opération
  */
 bool needCondCOP(Code_Op cop) {
@@ -105,8 +105,8 @@ bool needCondCOP(Code_Op cop) {
 }
 
 //! Renvoie l'opérande de l'instruction
-//! Fonction de I et X dans l'instruction
 /*!
+ * Fonction de I et X dans l'instruction
  * \param instr L'instruction à évaluer
  */
 char* getInstrOp(Instruction instr, unsigned addr) {

@@ -99,8 +99,10 @@ unsigned int getAddr(Machine *pmach, Instruction instr) {
 
 //! Vérifie que l'adresse n'a pas dépassé la zone allouée (erreur de segmentation)
 /*!
+ * Notez que cette méthode suppose que la première adresse est 0
+ * (ce qui est le cas dans notre simulation)
  * \param pmach machine en cours d'exécution
- * \param dataAddr adresse réelle
+ * \param dataAddr adresse à tester
  * \param addr adresse de l'instruction en cours
  */
 void checkDataAddr(Machine *pmach, unsigned int dataAddr, unsigned addr) {
@@ -108,10 +110,10 @@ void checkDataAddr(Machine *pmach, unsigned int dataAddr, unsigned addr) {
 		error(ERR_SEGDATA, addr);
 }
 
-//! Décode et exécute l'instruction LOAD.
-//! LOAD accepte l'adressage immédiat, absolu et indexé pour la source.
-//! Il faut indiquer un registre de destination.
+//! Décode et exécute l'instruction LOAD
 /*!
+ * LOAD accepte l'adressage immédiat, absolu et indexé pour la source.
+ * Il faut indiquer un registre de destination.
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -134,10 +136,10 @@ bool load(Machine *pmach, Instruction instr, unsigned addr) {
 	return true;
 }
 
-//! Décode et exécute l'instruction STORE.
-//! STORE accepte l'adressage absolu et indexé pour la destination.
-//! Il faut indiquer un registre pour la source.
+//! Décode et exécute l'instruction STORE
 /*!
+ * STORE accepte l'adressage absolu et indexé pour la destination.
+ * Il faut indiquer un registre pour la source.
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -155,10 +157,10 @@ bool store(Machine *pmach, Instruction instr, unsigned addr) {
 	return true;
 }
 
-//! Décode et exécute l'instruction ADD.
-//! ADD accepte l'adressage immédiat, absolu et indexé pour la source.
-//! Il faut indiquer un registre pour la destination.
+//! Décode et exécute l'instruction ADD
 /*!
+ * ADD accepte l'adressage immédiat, absolu et indexé pour la source.
+ * Il faut indiquer un registre pour la destination.
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -182,9 +184,9 @@ bool add(Machine *pmach, Instruction instr, unsigned addr) {
 }
 
 //! Décode et exécute l'instruction SUB.
-//! SUB accepte l'adressage immédiat, absolu et indexé pour la source.
-//! Il faut indiquer un registre pour la destination.
 /*!
+ * SUB accepte l'adressage immédiat, absolu et indexé pour la source.
+ * Il faut indiquer un registre pour la destination.
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -208,8 +210,8 @@ bool sub(Machine *pmach, Instruction instr,unsigned addr) {
 }
 
 //! Décode et exécute l'instruction BRANCH.
-//! BRANCH accepte l'adressage absolu et indexé pour l'adresse de l'instruction à exécuter.
 /*!
+ * BRANCH n'accepte pas l'adressage immédiat
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -226,8 +228,8 @@ bool branch(Machine *pmach, Instruction instr, unsigned addr) {
 }
 
 //! Décode et exécute l'instruction CALL.
-//! CALL accepte l'adressage absolu et indexé pour l'adresse du sous-programme.
 /*!
+ * CALL n'accepte pas l'adressage immédiat
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -245,9 +247,9 @@ bool call(Machine *pmach, Instruction instr, unsigned addr) {
 	return true;
 }
 
-//! Décode et exécute l'instruction RET.
-//! RET est employé seul.
+//! Décode et exécute l'instruction RET
 /*!
+ * RET ne s'intéresse pas au contenu de l'opérande
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -260,9 +262,9 @@ bool ret(Machine *pmach, Instruction instr, unsigned addr) {
 	return true;
 }
 
-//! Décode et exécute l'instruction PUSH.
-//! PUSH supporte l'immédiat, l'adressage indexé et absolu.
+//! Décode et exécute l'instruction PUSH
 /*!
+ * PUSH supporte l'immédiat, l'adressage indexé et absolu.
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -284,9 +286,9 @@ bool push(Machine *pmach, Instruction instr, unsigned addr)
 	return true;
 }
 
-//! Décode et exécute l'instruction POP.
-//! POP ne supporte pas les valeurs immédiates mais doit indiquer une adresse (absolue ou indexée).
+//! Décode et exécute l'instruction POP
 /*!
+ * POP ne supporte pas les valeurs immédiates
  * \param pmach machine en cours d'exécution
  * \param instr instruction en cours
  * \param addr adresse de l'instruction en cours
@@ -306,13 +308,7 @@ bool pop(Machine *pmach, Instruction instr, unsigned addr)
 	return true;
 }
 
-//! Décode et exécute une instruction.
-/*!
- * \param pmach machine en cours d'exécution
- * \param instr instruction en cours
- */
-bool decode_execute(Machine *pmach, Instruction instr) 
-{
+bool decode_execute(Machine *pmach, Instruction instr) {
     unsigned COP = instr.instr_generic._cop;
 	unsigned addr = pmach->_pc - 1;
 	switch (COP) {
@@ -351,15 +347,7 @@ bool decode_execute(Machine *pmach, Instruction instr)
 	}
 }
 
-//! Affiche la trace d'une instruction
-/*!
- * \param msg message à afficher
- * \param pmach machine en cours d'exécution
- * \param instr instruction en cours
- * \param addr adresse de l'instruction en cours d'exécution
- */
-void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr) 
-{
+void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr) {
 	printf("TRACE: %s: 0x%04x: ", msg, addr);
 	print_instruction(instr, addr);
 	printf("\n");
