@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 #include "instruction.h"
 
 const char* cop_names[] = {
@@ -26,10 +27,19 @@ const char* condition_names[] = {
     "LE",   //!< Négatif ou null
 };
 
+//! Renvoie la valeur de I (immédiat)
+/*!
+ * \param inst L'instruction à évaluer
+ */
 bool isImmediate(Instruction instr) {
     return instr.instr_generic._immediate;
 }
 
+//! Renvoie vrai si l'instruction est de type absolue
+//! Equivaut à not(X) ou I
+/*!
+ * \param inst L'instruction à évaluer
+ */
 bool isAbsolute(Instruction instr) {
     if(isImmediate(instr)) {
         return false;
@@ -37,15 +47,10 @@ bool isAbsolute(Instruction instr) {
     return !instr.instr_generic._indexed;
 }
 
-bool isRCregister(Instruction instr) {
-    const Code_Op COP = instr.instr_generic._cop;
-
-    if(COP > SUB || COP < LOAD) {
-        return false;
-    }
-    return true;
-}
-
+//! Renvoie le code opération de l'instruction
+/*!
+ * \param inst L'instruction à évaluer
+ */
 const Code_Op getInstrCop(Instruction instr) {
     const Code_Op COP = instr.instr_generic._cop;
 
@@ -54,8 +59,26 @@ const Code_Op getInstrCop(Instruction instr) {
     return COP;
 }
 
+//! Renvoie vrai si le code opération ne nécessite
+/*!
+ * \param inst L'instruction à vérifier
+ */
+bool isRCregister(Instruction instr) {
+    const Code_Op COP = getInstrCop(instr);
+
+    if(COP > SUB || COP < LOAD) {
+        return false;
+    }
+    return true;
+}
+
+//! Renvoie vrai si le code opération ne nécessite
+//! pas d'opérandes
+/*!
+ * \param inst L'instruction à vérifier
+ */
 bool noOpNeeded(Instruction instr) {
-    const Code_Op COP = instr.instr_generic._cop;
+    const Code_Op COP = getInstrCop(instr);
 
     if(COP <= NOP || COP >= HALT || COP == RET) {
         return true;
@@ -63,22 +86,37 @@ bool noOpNeeded(Instruction instr) {
     return false;
 }
 
-bool needCondCOD(Code_Op cod) {
-    if(cod == BRANCH || cod == CALL) {
+//! Renvoie vrai si le code opération passé en paramètre
+//! fait partie des codes qui nécessitent une condition
+//! soit: BRANCH et CALL
+/*!
+ * \param cop Code opération
+ */
+bool needCondCOP(Code_Op cop) {
+    if(cop == BRANCH || cop == CALL) {
         return true;
     }
     return false;
 }
 
-const char* getInstrOp(Instruction instr, unsigned addr) {
+//! Renvoie l'opérande de l'instruction
+//! Fonction de I et X dans l'instruction
+/*!
+ * \param inst L'instruction à évaluer
+ */
+char* getInstrOp(Instruction instr, unsigned addr) {
     if(noOpNeeded(instr)) {
         return "";
     }
 
-    char op[20];
+    char* op;
+    if((op = malloc(sizeof(char)*20)) == NULL) {
+        perror("Allocation failed");
+    }
+
     unsigned regcond = instr.instr_generic._regcond;
     bool immediate = isImmediate(instr), absolute = isAbsolute(instr);
-    unsigned val;
+    int val;
 
     if(immediate || absolute) {
         // registre ou condition + val
@@ -86,10 +124,10 @@ const char* getInstrOp(Instruction instr, unsigned addr) {
         else val = instr.instr_absolute._address;
 
         if(isRCregister(instr)) {
-            if (getInstrCop(instr) != STORE) sprintf(op,"R%02u, #%u",regcond, val);
+            if (getInstrCop(instr) != STORE) sprintf(op,"R%02u, #%i",regcond, val);
             // cas exceptionnel, pour le store
             else sprintf(op, "R%02u, @0x%04x", regcond, val);
-        } else if (needCondCOD(getInstrCop(instr))) {
+        } else if (needCondCOP(getInstrCop(instr))) {
             sprintf(op,"%s, @0x%04x", condition_names[regcond], instr.instr_immediate._value);
         } else {
             sprintf(op,"@0x%04x", instr.instr_immediate._value);
@@ -105,6 +143,7 @@ const char* getInstrOp(Instruction instr, unsigned addr) {
 }
 
 void print_instruction(Instruction instr, unsigned addr) {
-    printf("%s %s", cop_names[getInstrCop(instr)], getInstrOp(instr, addr));
+    unsigned codeOperation = getInstrCop(instr);
+    printf("%s %s", cop_names[codeOperation], getInstrOp(instr, addr));
 }
 
