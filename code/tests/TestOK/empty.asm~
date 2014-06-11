@@ -1,0 +1,14 @@
+//-----------------
+// Instructions
+//-----------------
+        TEXT 0
+
+        // Programme principal
+main    EQU *
+
+	HALT
+        END
+        
+        DATA 30
+        
+        END

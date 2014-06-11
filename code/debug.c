@@ -12,21 +12,17 @@ bool debug_ask(Machine *pmach) {
             return true;
 		}
 
-        do {
-            t = getchar();
-        } while(t != '\n' && t != EOF);
-
         switch(c) {
             case 'h':
                 printf("\th\tAffiche les différentes commandes disponibles.\n");
-				printf("\tc\tQuitte le mode de debuggage.\n");
+                printf("\tc\tQuitte le mode de debuggage.\n");
 				printf("\ts\tExecute les instructions pas à pas.\n");
 				printf("\tr\tAffiche les registres.\n");
 				printf("\td\tAffiche la mémoire DATA.\n");
-				printf("\tt\tprint text (program) memory\n");
-				printf("\tp\tprint text (program) memory\n");
+				printf("\tt\tAffiche le texte de la mémoire.\n");
+				printf("\tp\tAffiche le texte de la mémoire.\n");
 				printf("\tm\tAffiche les registres et la mémoire DATA.\n");
-				printf("\tRET\tExecute les instructions pas à pas.\n");
+				//printf("\tRET\tExecute les instructions pas à pas.\n");
                 break;
             case 'c':
                 return false;
