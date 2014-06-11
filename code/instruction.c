@@ -86,7 +86,9 @@ const char* getInstrOp(Instruction instr, unsigned addr) {
         else val = instr.instr_absolute._address;
 
         if(isRCregister(instr)) {
-            sprintf(op,"R%02u, #%u",regcond, val);
+            if (getInstrCop(instr) != STORE) sprintf(op,"R%02u, #%u",regcond, val);
+            // cas exceptionnel, pour le store
+            else sprintf(op, "R%02u, @0x%04x", regcond, val);
         } else if (needCondCOD(getInstrCop(instr))) {
             sprintf(op,"%s, @0x%04x", condition_names[regcond], instr.instr_immediate._value);
         } else {
@@ -94,9 +96,9 @@ const char* getInstrOp(Instruction instr, unsigned addr) {
         }
     } else {
             // registre ou condition + offset[registre RX]
-            unsigned offset = instr.instr_indexed._offset;
+            signed offset = instr.instr_indexed._offset;
             unsigned regindex = instr.instr_indexed._rindex;
-            sprintf(op,"R%02u, %u[R%02u]", regcond, offset, regindex);
+            sprintf(op,"R%02u, %i[R%02u]", regcond, offset, regindex);
     }
 
     return op;
