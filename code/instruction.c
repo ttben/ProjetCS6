@@ -1,3 +1,8 @@
+/*!
+ * \file instruction.c
+ * \brief Désassemblage d'une instruction.
+ */
+
 #include <stdio.h>
 #include <malloc.h>
 #include "instruction.h"
@@ -29,7 +34,7 @@ const char* condition_names[] = {
 
 //! Renvoie la valeur de I (immédiat)
 /*!
- * \param inst L'instruction à évaluer
+ * \param instr L'instruction à évaluer
  */
 bool isImmediate(Instruction instr) {
     return instr.instr_generic._immediate;
@@ -38,7 +43,7 @@ bool isImmediate(Instruction instr) {
 //! Renvoie vrai si l'instruction est de type absolue
 //! Equivaut à not(X) ou I
 /*!
- * \param inst L'instruction à évaluer
+ * \param instr L'instruction à évaluer
  */
 bool isAbsolute(Instruction instr) {
     if(isImmediate(instr)) {
@@ -49,7 +54,7 @@ bool isAbsolute(Instruction instr) {
 
 //! Renvoie le code opération de l'instruction
 /*!
- * \param inst L'instruction à évaluer
+ * \param instr L'instruction à évaluer
  */
 const Code_Op getInstrCop(Instruction instr) {
     const Code_Op COP = instr.instr_generic._cop;
@@ -61,7 +66,7 @@ const Code_Op getInstrCop(Instruction instr) {
 
 //! Renvoie vrai si le code opération ne nécessite
 /*!
- * \param inst L'instruction à vérifier
+ * \param instr L'instruction à vérifier
  */
 bool isRCregister(Instruction instr) {
     const Code_Op COP = getInstrCop(instr);
@@ -75,7 +80,7 @@ bool isRCregister(Instruction instr) {
 //! Renvoie vrai si le code opération ne nécessite
 //! pas d'opérandes
 /*!
- * \param inst L'instruction à vérifier
+ * \param instr L'instruction à vérifier
  */
 bool noOpNeeded(Instruction instr) {
     const Code_Op COP = getInstrCop(instr);
@@ -102,7 +107,7 @@ bool needCondCOP(Code_Op cop) {
 //! Renvoie l'opérande de l'instruction
 //! Fonction de I et X dans l'instruction
 /*!
- * \param inst L'instruction à évaluer
+ * \param instr L'instruction à évaluer
  */
 char* getInstrOp(Instruction instr, unsigned addr) {
     if(noOpNeeded(instr)) {

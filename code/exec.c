@@ -14,8 +14,7 @@
  */
 void changeCC(Machine *pmach, unsigned int regcond) {
     signed value = pmach->_registers[regcond];
-
-	if (value < 0)
+    if (value < 0)
         pmach->_cc = CC_N;
     else if (value > 0)
         pmach->_cc = CC_P;
