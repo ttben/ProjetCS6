@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "exec.h"
+#include "debug.h"
 bool dumping_in_progress =0;
 static uint32_t *raws;
 static uint32_t index_raws = 0;
@@ -90,7 +91,7 @@ void dump_memory(Machine *pmach)
 	print_data(pmach);
 	
 	FILE *fp = NULL; 
-	if( (fp =fopen("dump.prog", "w+")) == NULL)
+	if( (fp =fopen("dump.bin", "w+")) == NULL)
 	{
 		perror("Dump : Impossible de créer/ouvrir le fichier dump.prog");
 		exit(-1);

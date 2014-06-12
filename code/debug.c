@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 bool debug_ask(Machine *pmach) {
-    int c, t;
+    int c;
     while(true) {
         printf("**** Phase de debuggage ****");
         c = getchar();
