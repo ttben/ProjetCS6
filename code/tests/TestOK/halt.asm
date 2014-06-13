@@ -3,12 +3,12 @@
 main    EQU *
         NOP
 
-	HALT
+		HALT
         END
         
 
         DATA 
         
-        WORD 1234
+        WORD 1211
         
         END

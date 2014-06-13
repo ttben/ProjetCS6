@@ -1,10 +1,10 @@
         TEXT
 
 main    EQU *
-        LOAD R0, #1234
+        LOAD R0, #1211
         LOAD R1, 3[R0]
 
-	HALT
+		HALT
         END
         
         DATA

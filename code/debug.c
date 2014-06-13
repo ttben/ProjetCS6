@@ -6,14 +6,14 @@ bool debug_ask(Machine *pmach) {
     int c, t;
     while(true) {
         printf("**** Phase de debuggage ****");
-        c = getchar();
+        c = getchar(); // Récupère le caractère suivant.
 
         if(c == '\n') {
-            return true;
+            return true; // Si on est sur une fin de ligne on a fini.
 		}
 
         switch(c) {
-            case 'h':
+            case 'h': // Affiche les commandes disponibles
                 printf("\th\tAffiche les différentes commandes disponibles.\n");
                 printf("\tc\tQuitte le mode de debuggage.\n");
 				printf("\ts\tExecute les instructions pas à pas.\n");
@@ -22,26 +22,25 @@ bool debug_ask(Machine *pmach) {
 				printf("\tt\tAffiche le texte de la mémoire.\n");
 				printf("\tp\tAffiche le texte de la mémoire.\n");
 				printf("\tm\tAffiche les registres et la mémoire DATA.\n");
-				//printf("\tRET\tExecute les instructions pas à pas.\n");
                 break;
             case 'c':
-                return false;
+                return false; // Commandes pour quitter le programme
             case 's':
-                return true;
+                return true; // On passe à l'instruction suivante 
             case 'r':
                 print_cpu(pmach);
-                break;
+                break; // On demande l'affichage des registres
             case 'd':
                 print_data(pmach);
-                break;
+                break; // On demande l'affichage de la DATA
             case 'p':
             case 't':
                 print_program(pmach);
-                break;
+                break; // Affiche le texte présent en mémoire
             case 'm':
                 print_cpu(pmach);
                 print_data(pmach);
-                break;
+                break; // Affiche les registres et la DATA
             default:
                 break;
         }

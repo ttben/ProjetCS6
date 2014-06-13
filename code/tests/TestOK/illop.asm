@@ -3,7 +3,7 @@
 main    EQU *
         ILLOP
 
-	HALT
+		HALT
         END
 
         DATA

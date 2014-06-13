@@ -3,7 +3,7 @@
 main	PUSH #4
         POP @addr
 
-	HALT
+		HALT
         END
 
         DATA

@@ -1,4 +1,4 @@
-        TEXT 30
+        TEXT
 
 main    EQU *
         PUSH #0
@@ -26,22 +26,8 @@ main    EQU *
         PUSH #0
         PUSH #0
         PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
-        PUSH #0
 
-	HALT
+		HALT
         END
         
         DATA

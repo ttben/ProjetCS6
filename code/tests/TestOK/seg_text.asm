@@ -1,12 +1,12 @@
         TEXT
 
 main    EQU *
-        ADD R0, #12345
+        ADD R0, #12111
         CALL NC, 6[R0]
         NOP
         NOP
 
-	HALT
+		HALT
         END
 
         DATA

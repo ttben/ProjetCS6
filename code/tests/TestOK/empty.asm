@@ -2,7 +2,7 @@
 
 main    EQU *
 
-	HALT
+		HALT
         END
         
         DATA
