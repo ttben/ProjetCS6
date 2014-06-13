@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 bool debug_ask(Machine *pmach) {
-    int c, t;
+    int c;
+    bool result = false;
     while(true) {
         printf("**** Phase de debuggage ****");
         c = getchar(); // Récupère le caractère suivant.
@@ -24,9 +25,11 @@ bool debug_ask(Machine *pmach) {
 				printf("\tm\tAffiche les registres et la mémoire DATA.\n");
                 break;
             case 'c':
-                return false; // Commandes pour quitter le programme
+                result = false; // Commandes pour quitter le programme
+				break;
             case 's':
-                return true; // On passe à l'instruction suivante 
+                result = true; // On passe à l'instruction suivante 
+                break;
             case 'r':
                 print_cpu(pmach);
                 break; // On demande l'affichage des registres
@@ -46,5 +49,5 @@ bool debug_ask(Machine *pmach) {
         }
     }
     printf("\n");
-    return false;
+    return result;
 }

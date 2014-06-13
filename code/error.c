@@ -3,9 +3,9 @@
 
 void error(Error err, unsigned addr) {
 	switch(err) {
-		case ERR_NOERROR : 
-				printf("**** Aucune erreur ****");
-				break;
+		case ERR_NOERROR :
+				printf("**** Aucune erreur **** ");
+				exit(0);
 		case ERR_UNKNOWN : 
 				printf("**** ERREUR 1 **** : Instruction inconnue");
 				printf("\tà l'adresse 0x%04x\n", addr);
