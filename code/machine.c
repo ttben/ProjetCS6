@@ -220,6 +220,10 @@ void simul(Machine *pmach, bool debug)
 	
 	while(run)
 	{
+				
+		//	Demander le debug si debug en cours
+		while(debug && debug_ask(pmach));
+				
 		//	Récupérer l'instruction courante
 		instruction_courante = pmach->_text[pmach->_pc++];
 	
@@ -228,9 +232,6 @@ void simul(Machine *pmach, bool debug)
 		run = decode_execute(pmach, instruction_courante);
 		
 		trace("Executing:", pmach, instruction_courante, pmach->_pc);
-		
-		//	Demander le debug si debug en cours
-		if(debug)
-			debug_ask(pmach);
+
 	}
 }
