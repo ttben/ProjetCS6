@@ -1,21 +1,26 @@
 #include "machine.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "exec.h"
 #include "debug.h"
 bool dumping_in_progress =0;
-static uint32_t *raws;
-static uint32_t index_raws = 0;
 
 void load_program(Machine *pmach,
                   unsigned textsize, Instruction text[textsize],
                   unsigned datasize, Word data[datasize],  unsigned dataend)
 {
+
+	pmach->_text = malloc(sizeof(Instruction) * textsize);	
+	pmach->_data = malloc(sizeof(Word) * datasize);	
+	
 	//	Sauvegarder les paramètres
-	pmach->_text = text;
+	for(int i = 0; i < textsize ; i++)
+		pmach->_text[i] = text[i];
 	pmach->_textsize = textsize;
 	
-	pmach->_data = data;
+	for(int i = 0; i < datasize ; i++)
+		pmach->_data[i] = data[i];
 	pmach->_datasize = datasize;
 	
 	pmach->_dataend = dataend;
@@ -38,7 +43,7 @@ void read_program(Machine *mach, const char *programfile)
 	if((pfd = fopen(programfile, "r")) == NULL)
     {
     	perror("read_program : Can not open file");
-    	return;
+    	exit(-1);
     }
 
 	unsigned int textsize;
@@ -52,7 +57,7 @@ void read_program(Machine *mach, const char *programfile)
  
  	//	Allouer la mémoire pour les instructions et données
 	Instruction *text = malloc(sizeof(Instruction) * textsize);
-	Word *data = malloc(sizeof(Word) * datasize);
+		Word *data = malloc(sizeof(Word) * datasize);
 
 	//	Lire les textsize instructions et datasize données
 	fread(text, sizeof(Instruction), textsize, pfd);	
@@ -61,6 +66,9 @@ void read_program(Machine *mach, const char *programfile)
 	//	Charger le programme
     load_program(mach,textsize, text, datasize, data, dataend);
     
+    free(text);
+    free(data);
+    
     if(fclose(pfd) == -1)
        	perror("read_program Can not close opened file");
 }
@@ -68,44 +76,53 @@ void read_program(Machine *mach, const char *programfile)
 void dump_memory(Machine *pmach)
 {
 	//	Réinitialiser les variables de dump
-	index_raws = 0;
 	dumping_in_progress = 1;
-	
-	int taille_donnees_raws = pmach->_textsize + pmach->_datasize + 3;
-	
-	/*	
-		(Ré)Allouer la place du binaire a générer
-		(nb de text, nb de data + 3 int indiquant
-	 	la taille de text & data et donnant dataend 
-	*/
-	raws = malloc(sizeof(uint32_t) * taille_donnees_raws);
-	
-	//	Renseigner les champs de tête/d'informations
-	raws[0] = pmach->_textsize;
-	raws[1] = pmach->_datasize;
-	raws[2] = pmach->_dataend;
-	index_raws += 3;
 	
 	//	Afficher le contenu des segments
 	print_program(pmach);
 	print_data(pmach);
-	
-	FILE *fp = NULL; 
-	if( (fp =fopen("dump.bin", "w+")) == NULL)
-	{
-		perror("Dump : Impossible de créer/ouvrir le fichier dump.prog");
-		exit(-1);
-	}
-		
-	//	Ecrire raws dans le dump.prog
-	fwrite(raws, sizeof(uint32_t), taille_donnees_raws, fp);
-	
-	//	Fermer le fdescriptor
-	if( fclose(fp) == -1)
-	{
-		perror("Dump : Impossible de fermer dump.prog");
-		exit(-1);
-	}
+
+   	FILE *file;
+    if(!(file = fopen("dump.bin", "w+")))
+    {
+        fprintf(stderr, "Ecriture du fichier impossible.\n");
+        exit(1);
+    }
+
+    if(fwrite(&(pmach->_textsize), sizeof(unsigned), 1, file) != 1)
+    {
+        fprintf(stderr, "Erreur durant l'écriture de _textsize.\n");
+        exit(1);
+    }
+
+    if(fwrite(&(pmach->_datasize), sizeof(unsigned), 1, file) != 1)
+    {
+        fprintf(stderr, "Erreur durant l'écriture de _datasize.\n");
+        exit(1);
+    }
+
+    if(fwrite(&(pmach->_dataend), sizeof(unsigned int), 1, file) != 1)
+    {
+        fprintf(stderr, "Erreur durant l'écriture de _dataend.\n");
+        exit(1);
+    }
+
+    if(fwrite(&(pmach->_text->_raw), sizeof(Word), pmach->_textsize, file) !=
+            pmach->_textsize)
+    {
+        fprintf(stderr, "Erreur durant l'écriture des instructions.\n");
+        exit(1);
+    }
+
+    //Ecriture des données
+    if(fwrite(pmach->_data, sizeof(Word), pmach->_datasize, file)
+            != pmach->_datasize)
+    {
+        fprintf(stderr, "Erreur durant l'écriture des données.\n");
+        exit(1);
+    }
+    //On ferme le fichier
+    fclose(file); 
 	
 	//	Réinitialiser la variable de dump
 	dumping_in_progress = 0;
@@ -133,9 +150,6 @@ void print_program(Machine *pmach)
 		{
 			if(i % 4 == 0) printf("\n\t");
 			printf("0x%08x, ", pmach->_text[i]._raw);
-			//	Sauvegarder les valeurs brutes (bin) des datas
-			raws[index_raws + i] = (pmach->_text[i])._raw;
-			index_raws ++;
 		}
 	}
 	
@@ -169,8 +183,6 @@ void print_data(Machine *pmach)
 			printf("0x%08x, ", pmach->_data[i]);
 			if( (i+1) % 4 == 0) printf("\n\t");
 			//	Sauvegarder les valeurs brutes (bin) des datas
-			raws[index_raws + i] = (pmach->_data[i]);
-			index_raws ++;
 		}
 	}
 	

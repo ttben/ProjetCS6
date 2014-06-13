@@ -109,14 +109,9 @@ bool needCondCOP(Code_Op cop) {
  * Fonction de I et X dans l'instruction
  * \param instr L'instruction à évaluer
  */
-char* getInstrOp(Instruction instr, unsigned addr) {
+void getInstrOp(Instruction instr, unsigned addr, char* op) {
     if(noOpNeeded(instr)) {
-        return "";
-    }
-
-    char* op;
-    if((op = malloc(sizeof(char)*20)) == NULL) {
-        perror("Allocation failed");
+        return;
     }
 
     unsigned regcond = instr.instr_generic._regcond;
@@ -143,12 +138,12 @@ char* getInstrOp(Instruction instr, unsigned addr) {
             unsigned regindex = instr.instr_indexed._rindex;
             sprintf(op,"R%02u, %i[R%02u]", regcond, offset, regindex);
     }
-
-    return op;
 }
 
 void print_instruction(Instruction instr, unsigned addr) {
     unsigned codeOperation = getInstrCop(instr);
-    printf("%s %s", cop_names[codeOperation], getInstrOp(instr, addr));
+    char op[20];
+    getInstrOp(instr, addr,op);
+    printf("%s %s", cop_names[codeOperation], op);
 }
 
