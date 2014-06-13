@@ -106,7 +106,6 @@ unsigned int getAddr(Machine *pmach, Instruction instr) {
  * \param addr adresse de l'instruction en cours
  */
 void checkDataAddr(Machine *pmach, unsigned int dataAddr, unsigned addr) {
-	printf("DATA ADDR  %d > %d\n", dataAddr, pmach->_datasize);
 	if (dataAddr > pmach->_datasize)
 		error(ERR_SEGDATA, addr);
 }

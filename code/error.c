@@ -43,6 +43,6 @@ void error(Error err, unsigned addr) {
 
 void warning(Warning warn, unsigned addr){
 		if(WARN_HALT == warn) {
-				printf("**** WARNING **** : HALT atteind à l'adresse 0x%04x\n", addr);
+				printf("**** WARNING **** : HALT atteint à l'adresse 0x%04x\n", addr);
 		}
 }

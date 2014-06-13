@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "instruction.h"
+#include <strings.h>
 
 const char* cop_names[] = {
     "ILLOP",	//!< Instruction illégale
@@ -111,6 +112,7 @@ bool needCondCOP(Code_Op cop) {
  */
 void getInstrOp(Instruction instr, unsigned addr, char* op) {
     if(noOpNeeded(instr)) {
+    	
         return;
     }
 
@@ -143,6 +145,7 @@ void getInstrOp(Instruction instr, unsigned addr, char* op) {
 void print_instruction(Instruction instr, unsigned addr) {
     unsigned codeOperation = getInstrCop(instr);
     char op[20];
+    bzero(op, 20);
     getInstrOp(instr, addr,op);
     printf("%s %s", cop_names[codeOperation], op);
 }

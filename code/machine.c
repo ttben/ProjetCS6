@@ -168,7 +168,7 @@ void print_data(Machine *pmach)
 	
 	//	Detecter si un dump est en cours
 	if(dumping_in_progress == 1) printf("Word data[] = {\n\t");
-	else printf("*** DATA (size: %d, end = %08x (%d)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
+	else printf("\n*** DATA (size: %d, end = %08x (%d)) ***\n", pmach->_datasize, pmach->_dataend, pmach->_dataend);
 	
 	//	Parcourir le segment de données
 	for(i = 0 ; i < pmach->_datasize ; i++)
